@@ -9,7 +9,7 @@ pipeline {
         }
     }
    
-    stages {
+    stages { 
 		/*
         stage('Checkout SCM') {
             steps {
