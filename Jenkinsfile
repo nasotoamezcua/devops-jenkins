@@ -1,8 +1,14 @@
 pipeline {
-    agent any
-    tools {
-        maven 'maven3.9.11'
-    }   
+//    agent any
+//    tools {
+//        maven 'maven3.9.11'
+//    }
+    agent {
+        docker {
+            image 'maven:3.9.12-eclipse-temurin-21'
+        }
+    }
+   
     stages {
 		/*
         stage('Checkout SCM') {
@@ -12,7 +18,6 @@ pipeline {
         }*/
         stage('Compile') {
             steps {
-				sh 'ls -la'
                 sh 'mvn clean compile -B -ntp'
             }
         }
