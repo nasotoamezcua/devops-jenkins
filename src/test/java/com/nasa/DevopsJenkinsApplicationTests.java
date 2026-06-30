@@ -8,6 +8,7 @@ class DevopsJenkinsApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println("Prueba Exitosa");
 	}
 
 }

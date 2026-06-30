@@ -10,16 +10,20 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/nasotoamezcua/devops-jenkins.git'
             }
         }*/
-        stage('Build') {
+        stage('Compile') {
             steps {
 				sh 'ls -la'
-                sh 'mvn clean package -DskipTests'
+                sh 'mvn clean compile'
             }
-        }   
-        
+        }
         stage('Test') {
             steps {
-                sh 'cat /etc/os-release'
+                sh 'mvn test'
+            }
+        }
+        stage('Package') {
+            steps {
+                sh 'mvn package'
             }
         }
        
