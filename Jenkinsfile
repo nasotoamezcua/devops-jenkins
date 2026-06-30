@@ -8,7 +8,9 @@ pipeline {
             image 'maven:3.9.12-eclipse-temurin-17'
         }
     }
-   
+    triggers {
+         pollSCM("* * * * *")       
+    }
     stages { 
 		/*
         stage('Checkout SCM') {
