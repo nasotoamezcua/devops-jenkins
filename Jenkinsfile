@@ -18,7 +18,7 @@ pipeline {
         }*/
         stage('Compile') {
             steps {
-                sh 'mvn clean compile -B -ntp'
+                sh 'mvn -X clean compile -B -ntp'
             }
         }
         stage('Test') {
